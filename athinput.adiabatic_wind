@@ -1,0 +1,61 @@
+<comment>
+problem   = Adiabatic wind
+reference = 
+configure = --prob=adiabatic_wind --coord=spherical_polar -hdf5 --hdf5_path /opt/homebrew -mpi
+
+<job>
+problem_id = out/adiwind        # problem ID: basename of output filenames
+
+<output1>
+file_type   = hdf5       # Tabular data dump
+variable    = prim      # variables to be output
+dt          = 100 # time increment between outputs
+
+<time>
+cfl_number = 0.3   # The Courant, Friedrichs, & Lewy (CFL) Number
+nlim       = -1  # cycle limit
+tlim       = 100000 # time limit
+ncycle_out = 10000
+integrator  = rk2       # time integration algorithm
+xorder      = 2         # order of spatial reconstruction
+
+<mesh>
+nx1         = 1024 # Number of zones in X1-direction
+x1min       = 1.0    # minimum value of X1
+x1max       = 100.0  # maximum value of X1
+x1rat       = 1.0045073642544624  # 100^(1/1024)
+#x1rat      = 1.00112494139988   # 100^(1/4096)
+ix1_bc      = user   # Inner-X1 boundary condition flag
+ox1_bc      = user  # Outer-X1 boundary condition flag
+
+nx2         = 1        # Number of zones in X2-direction
+x2min       = 0.0      # minimum value of X2
+x2max       = 3.1415926535897931       # maximum value of X2
+ix2_bc      = periodic  # Inner-X2 boundary condition flag
+ox2_bc      = periodic  # Outer-X2 boundary condition flag
+
+nx3         = 1         # Number of zones in X3-direction
+x3min       = 0.0      # minimum value of X3
+x3max       = 6.2831853071795862       # maximum value of X3
+ix3_bc      = periodic  # Inner-X3 boundary condition flag
+ox3_bc      = periodic  # Outer-X3 boundary condition flag
+
+<meshblock>
+nx1         = 128
+nx2         = 1
+nx3         = 1
+
+<hydro>
+gamma       = 1.6666666666666667
+#gamma       = 1.001
+#gamma       = 1.333333
+#gamma       = 1.1
+#gamma = 1.6
+
+<problem>
+GM          = 1
+K           = 0.39
+rho0        = 1.0
+
+#isothermal limit:
+#K           = 0.05

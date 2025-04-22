@@ -1,0 +1,5 @@
+.ipynb_checkpoints/*
+out/*
+png/*
+images_to_movie
+.DS_Store
