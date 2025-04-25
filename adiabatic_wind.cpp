@@ -55,9 +55,9 @@ void MeshBlock::ProblemGenerator(ParameterInput *pin)
   gm1 = gam - 1.0;
   KK = pin->GetReal("problem","K");
   rho0 = pin->GetReal("problem","rho0");
-  Real r2 = 1.0/(1.0 - gam*KK/gm1);
-  //Real r2 = 1.1;
-  //std::cout << "r2=" << r2;
+  //Real r2 = 1.0/(1.0 - gam*KK/gm1);
+  Real r2 = 1.1;
+  std::cout << "r2=" << r2 << "\n";
     
   // Initialize hydro variable
   for(int k=ks; k<=ke; ++k) {

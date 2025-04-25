@@ -3,3 +3,4 @@ out/*
 png/*
 images_to_movie
 .DS_Store
+*.synctex.gz
