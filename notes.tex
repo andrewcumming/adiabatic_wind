@@ -7,7 +7,7 @@
 
 \section{Adiabatic winds}
 
-In these notes, we work out the solutions for an adiabatic wind. We assume that the gas obeys $P = K \rho^\gamma$, with given constant values of the adiabatic index $\gamma$ and entropy prefactor $K$. We derive the analytic solution first and then compare with numerical results from \texttt{Athena++}.
+In these notes, we work out the solutions for an adiabatic wind. We assume that the gas obeys $P = K \rho^\gamma$, with given constant values of the adiabatic index $\gamma$ and entropy prefactor $K$. We derive the analytic solution first and then compare with numerical results from \texttt{Athena++}. Analytic solutions can also be found in Holzer \& Axford (1970) and Parker (1960) who also discusses the different regimes and requirements on $\gamma$ and $K$ for a transonic solution.
 
 \subsection{Sonic point}
 
@@ -157,10 +157,10 @@ which is satisfied when $\lambda_\star = 2\gamma$. So we have the general behavi
 Therefore, transonic solutions require
 \begin{equation}
 \boxed{
-2\gamma < \lambda_\star < \lambda_\mathrm{crit} ={\gamma\over \gamma-1}.
+2\gamma < \lambda_\star < \lambda_\mathrm{crit} ={\gamma\over \gamma-1},
 }
 \end{equation}
-This range shrinks to zero at $\gamma=3/2$, so transonic solutions occur only for $1<\gamma<3/2$. It is largest for $\gamma\rightarrow 1$, in which case $\lambda_\mathrm{crit}$ diverges and there is always a wind solution no matter how small $c_\star$ becomes.
+as previously discussed by Parker (1960). This range shrinks to zero at $\gamma=3/2$, so transonic solutions occur only for $1<\gamma<3/2$. It is largest for $\gamma\rightarrow 1$, in which case $\lambda_\mathrm{crit}$ diverges and there is always a wind solution no matter how small $c_\star$ becomes.
 
 The value of the Mach number at the surface can be obtained from equation (\ref{eq:Ewithv}) and using the definition of $\lambda_\star$, which gives
 \begin{equation}
@@ -193,8 +193,9 @@ or
 \end{equation}
 where the maximum extent of the atmosphere, the radius where the density drops to zero, is given by
 \begin{equation}
-r_\mathrm{max} = {R\over 1-\lambda_\mathrm{crit}/\lambda_\star}.
+r_\mathrm{max} = {R\over 1-\lambda_\mathrm{crit}/\lambda_\star}
 \end{equation}
+(agreeing with Parker 1960 eq.~[25]).
 Therefore we see that there is a hydrostatic solution as long as $\lambda_\star > \lambda_\mathrm{crit}$. As $\lambda_\star$ approaches $\lambda_\mathrm{crit}$ from above, the extent of the atmosphere $r_\mathrm{max}\rightarrow \infty$. For even smaller values of $\lambda_\star$, we transition into the wind solutions discussed earlier. As $\gamma\rightarrow 1$ and $\lambda_\mathrm{crit}$ diverges, we lose the hydrostatic solutions. This is consistent with the density profile of an isothermal atmosphere, which falls off exponentially. In contrast to a polytropic atmosphere, an isothermal atmosphere does not have a finite thickness. 
 
 How do we interpret $\lambda_\star = \lambda_\mathrm{crit}$? Using the definition of $\lambda_\star$, this corresponds to
@@ -248,6 +249,17 @@ Figures 1 and 2 show the results from a set of models with $\gamma=1.4$ and $\ga
 \end{figure}
 
 
+
+\begin{references}
+
+\noindent
+Holzer, T.~E. \& Axford, W.~I. (1970) ARAA 8, 31
+
+\noindent
+Parker, E.~N. (1960) ApJ 132, 821
+
+
+\end{references}
 
 \end{document}
 
